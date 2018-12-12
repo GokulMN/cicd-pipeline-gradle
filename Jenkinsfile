@@ -1,8 +1,12 @@
 pipeline {
   agent any
-   stage ('Checkout code') {
+   stage('Checkout') {
         steps {
-            checkout scm
+            git branch: 'cicd-pipeline-gradle',
+                credentialsId:'8280a4b8701d55ba5ee965cd37c84953233e83e2',
+                url: 'ssh://github.com/GokulMN/cicd-pipeline-gradle.git'
+
+            sh "ls -lat"
         }
     }
    stages {
