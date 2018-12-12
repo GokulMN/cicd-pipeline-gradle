@@ -1,5 +1,6 @@
 pipeline {
   agent any
+    stages {
    stage ('Checkout') {
         steps {
             git branch: 'cicd-pipeline-gradle',
@@ -8,7 +9,6 @@ pipeline {
             sh "ls -lat"
         }
     }
-   stages {
   stage ('Build'){
   steps {
     echo 'Running Build Automation'
